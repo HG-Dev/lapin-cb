@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 135 99">
+  <defs>
+    <style>
+      .a {
+        fill: none;
+        stroke: #fff;
+        stroke-miterlimit: 10;
+        stroke-width: 6px;
+      }
+
+      .b, .c {
+        fill: #fff;
+      }
+
+      .c {
+        font-size: 56.14px;
+        font-family: Arial-BoldMT, Arial;
+        font-weight: 700;
+      }
+    </style>
+  </defs>
+  <title>open_icon</title>
+  <path class="a" d="M109.5,89h16.9A30.7,30.7,0,0,0,129,76.5h0A31.6,31.6,0,0,0,97.5,45h-45A31.6,31.6,0,0,0,21,76.5h0a31.5,31.5,0,0,0,18,28.4V124l16-16H90A19.6,19.6,0,0,1,109.5,89Z" transform="translate(-18 -42)"/>
+  <g>
+    <path class="b" d="M130.5,85h-21A22.6,22.6,0,0,0,87,107.6h0a22.6,22.6,0,0,0,22.5,22.5H132l11,11V126.2a22.4,22.4,0,0,0,10-18.6h0A22.6,22.6,0,0,0,130.5,85ZM111,117h-8v-8h8Zm13,0h-8v-8h8Zm13,0h-8v-8h8Z" transform="translate(-18 -42)"/>
+    <text class="c" transform="translate(41.9 54.9)">?</text>
+  </g>
+</svg>

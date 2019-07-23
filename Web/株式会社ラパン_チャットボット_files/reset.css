@@ -1,0 +1,97 @@
+@charset "utf-8";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+html,body,
+a,img,
+h1,h2,h3,h4,h5,h6,
+header,footer,nav,
+article,section,figure,figcaption,aside,
+div,p,span,pre,em,strong,
+ol,ul,li,dl,dt,dd,
+iframe,
+form,fieldset,label,legend,
+input,textarea,select,
+table,caption,tbody,tfoot,thead,tr,th,td,
+dfn,abbr,canvas,details,embed,menu,output,ruby, summary,time, mark, audio, video,applet,object,blockquote,acronym,address,cite,code,del,big,small,q,s,ins,kbd,samp,strike,sub,sup,tt,var,u,i
+{
+  margin:0;
+  padding:0;
+  border:0;
+  font-style:normal;
+  font-weight:normal;
+  font-size:100%;
+  vertical-align:baseline;
+  box-sizing:border-box;
+}
+
+article,aside,details,figcaption,figure,footer,header,menu,nav,section {display:block;}
+
+strong {font-weight:bold;}
+
+a:focus {outline:none;}
+
+img {vertical-align:bottom; -ms-interpolation-mode:bicubic;}
+
+svg {margin:0; padding:0;}
+
+input,
+textarea,
+select,
+button,
+pre {
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  font-size:14px;
+  line-height:1.65em;
+}
+
+input,
+textarea,
+select,
+button {border-radius:0; outline:none;}
+
+/* CSS Browser Selector */
+  .ipad input,
+  .ipad textarea,
+  .ipad select,
+  .ipad button {-webkit-appearance:none;}
+
+@media only screen and (max-width: 766px) {
+  input,
+  textarea,
+  select,
+  button {-webkit-appearance:none;}
+}
+
+select,
+button,
+input[type="button"] {cursor:pointer;}
+
+input,
+textarea {margin:0; padding:0;}
+
+textarea {resize:vertical; overflow:auto;}
+
+select {margin:-2px 0 0;}
+
+pre {white-space:pre-wrap; word-wrap:break-word; overflow:visible;}
+
+
+
+ol, ul{list-style:none;}
+
+table{border-collapse:collapse; border-spacing:0;}
+
+blockquote, q {quotes:none;}
+
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {content:''; content:none;}
+
+/* //ラパンstylesheet */

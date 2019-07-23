@@ -1,0 +1,133 @@
+#lapin-cb{
+    z-index: 999;
+}
+#lapin-cb iframe {
+	height:100%;
+	width:100%;
+    border:0 none;
+    z-index:999;
+    vertical-align: top
+}
+#tab-close  {
+    position: fixed;
+    bottom: 390px;
+    right: 25px;
+    width: 320px;
+    height: 36px !important;
+    background-color: rgb(109, 135, 163);
+    color: #ebebeb;
+    line-height: 38px;
+    /*Interesting visual quirk, not now border: 1px solid #d4d4d4;*/
+    cursor: pointer;
+    border-bottom: 0 none;
+    border-radius: 6px 6px 0px 0px;
+    padding-left: 0;
+    font-size:14px;
+	font-weight: 700;
+    z-index:10000;
+    box-shadow: 0px 1px 5px rgba(128, 128, 128, 0.7), 1px 1px 4px rgba(128, 128, 128, 0.7), 0 0 0px rgba(128, 128, 128, 0.7) inset;
+    margin-bottom: 25px;
+}
+#tab-close:hover {
+    background-color:rgb(87, 116, 146);
+}
+#chat {
+	position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 320px;
+    height: 390px;
+    background: #FFFFFF;
+    z-index:10000;
+    box-shadow: 0px 1px 5px rgba(128, 128, 128, 0.5), 1px 4px 4px rgba(191, 191, 191, 0.4), 0 0 0px rgba(150, 150, 150, 0.7) inset;
+    border-radius: 0 0 6px 6px;
+}
+#chat-open {
+    background-color: rgb(109, 135, 163);
+    display: block;
+}
+#chat-open:hover {
+    background-color:rgb(87, 116, 146);
+}
+.chat-fadeIn  {
+    -webkit-animation: slideIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -moz-animation: slideIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    animation: slideIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -webkit-transform-origin: left bottom;
+    -moz-transform-origin: left bottom;
+    -ms-transform-origin: left bottom;
+    -o-transform-origin: left bottom;
+    transform-origin: left bottom;
+
+    -webkit-transition: height 0.8s linear;
+    -o-transition: height 0.8s linear;
+    transition: height 0.8s linear;
+}
+
+@-webkit-keyframes slideIn {
+  from {
+    opacity:0;
+    -webkit-transform: translate(0,40px);
+  }
+  to {
+    opacity:1;
+    -webkit-transform: translate(0,0px);
+  }
+}
+@-moz-keyframes slideIn {
+  from { opacity:0;
+    -moz-transform: translate(0,40px);
+  }
+  to {
+    opacity:1;
+    -moz-transform: translate(0,0px);
+  }
+}
+@keyframes slideIn {
+  from {
+    opacity:0;
+    -webkit-transform: translate(0,40px);
+    -moz-transform: translate(0,40px);
+    -ms-transform: translate(0,40px);
+    -o-transform: translate(0,40px);
+    transform: translate(0,40px);
+  }
+  to {
+    opacity:1;
+    -webkit-transform: translate(0,0px);
+    -moz-transform: translate(0,0px);
+    -ms-transform: translate(0,0px);
+    -o-transform: translate(0,0px);
+    transform: translate(0,0px);
+  }
+}
+#lapin-cb .fixed-button-circle {
+    width: 65px;
+    height: 65px;
+    border-radius: 50% !important; /*Prevents accidental activation*/
+    line-height: 65px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    cursor: pointer;
+    z-index: 10000;
+    box-shadow: 0px 1px 5px rgba(128, 128, 128, 0.7), 1px 1px 4px rgba(128, 128, 128, 0.7), 0 0 0px rgba(128, 128, 128, 0.7) inset;
+}
+.chat-fadeOut {
+    -webkit-animation-duration: 0.6s;
+    animation-duration: 0.6s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: fadeOut;
+    animation-name: fadeOut;
+ }
+ @-webkit-keyframes fadeOut {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+ }
+ @keyframes fadeOut {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+ }
+ /*@media screen and (max-width:###px){
+}*/
