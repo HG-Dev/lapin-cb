@@ -1,7 +1,9 @@
 function openLapinCBFrame(open) {
     var widget_parts = document.querySelectorAll("#lapin-cb div");
     if (open) {
-        document.getElementById('iframe_widget').src = './chatbot/index.html';
+        //Get database names
+        var db_names = document.getElementById('iframe_widget').name;
+        document.getElementById('iframe_widget').src = './chatbot/index.html?cbdb='+db_names;
         document.getElementById("chat-open").style.display = "block";
         for (var i = 0; i < widget_parts.length; i++)
         {

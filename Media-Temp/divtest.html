@@ -40,5 +40,31 @@ li a:hover {
   <li><a href="#about">About</a></li>
 </ul>
 <div class="end">End</div>
+
+<script type="text/javascript">
+  if (!this.cbdb) var cbdb = {};
+  if (!cbdb.file) cbdb.file = {};
+  cbdb.testList = []
+  cbdb.test = true;
+</script>
+<script type="text/javascript">
+  if (!this.cbdb) var cbdb = {};
+  cbdb.test3 = false;
+  cbdb.file.def = true
+  cbdb.testList.push("Test1");
+  cbdb.testList.push("aaaa");
+  var myRe = /^また[。、….！!？?]*$/i;
+  var myArray = myRe.exec('また.');
+  var anotherArray = myRe.exec('また！');
+  var goodCase = myRe.exec('また.');
+  var badCase = myRe.exec('また…...');
+</script>
+<script type="text/javascript">
+  console.log(myArray)
+  console.log(anotherArray)
+  console.log(goodCase)
+  console.log(badCase)
+</script>
+
 </body>
 </html>
