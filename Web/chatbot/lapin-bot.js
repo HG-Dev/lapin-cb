@@ -37,6 +37,12 @@ function init() {
   if (!cbdb.startupMsg) {
     cbdb.startupMsg = "Starting up...";
   }
+  if (!cbdb.placeholderFirst) {
+    cbdb.placeholderFirst = "Type your question here...";
+  }
+  if (!cbdb.placeholderLater) {
+    cbdb.placeholderLater = cbdb.placeholderFirst;
+  }
   botui.message
   .bot({
     delay: 1000,
@@ -47,7 +53,7 @@ function init() {
     return botui.action.text({
       delay: 1000,
       action: {
-        placeholder: 'ここで入力できます'
+        placeholder: cbdb.placeholderFirst
       }
     })
   }).then(responseLoop);
@@ -85,23 +91,37 @@ function getResponse(res)
   for (const [ name, cbData ] of Object.entries(cbdb.file))
   {
     alias_processed = res.value
-    console.log("Searching " + name)
     if (res.value.substring(0, 1) != '%')
     {
+      var i = 0;
       for (const [ alias, keyword ] of Object.entries(cbData.aliasDict))
       {
-        var alias_regex = new RegExp(alias, "g");
+        i++;
+        var alias_regex = new RegExp(alias, "gi");
         alias_processed = alias_processed.replace(alias_regex, keyword);
       }
+      console.log(`Checked aliases. There are ${i} in ${name}`);
     }
     console.log("Testing regex with " + alias_processed)
     for (const [ regex, response ] of Object.entries(cbData.regexDict))
     {
-      console.log("Testing regex: " + regex);
-      var final_regex = new RegExp(regex, "i");
-      if (final_regex.test(alias_processed)) return keywordResponse(regex, response);
+      var noalias_regex = /\#/g;
+      var regex_str = regex.replace(noalias_regex, "");
+      var final_regex = new RegExp(regex_str, "i");
+      if (regex_str != regex) //If the regex_str was stripped of alias-cancelling pound signs
+      {
+        console.log(`${regex_str} was changed from ${regex}`);
+        console.log(`Testing regex ${regex} against ${res.value}`);
+        if (final_regex.test(res.value)) return keywordResponse(regex, response);
+      }
+      else
+      {
+        console.log(`Testing regex ${regex} against ${alias_processed}`);
+        if (final_regex.test(alias_processed)) return keywordResponse(regex, response);
+      }
     }
   }
+  console.log("Nothing found");
   //No viable keywords could be found in user input
   slipups += 1;
   if (slipups > 1)
@@ -115,7 +135,7 @@ function getResponse(res)
 
 function longOrShort(key, value)
 {
-  if (keyHistory.indexOf(key) >= 0) {
+  if (keyHistory.indexOf(key) >= 0 && value.short != "") {
     return value.short
   }
   keyHistory.push(key)
@@ -177,7 +197,7 @@ function responseLoop(res) {
     return botui.action.text({
       delay: 200,
       action: {
-        placeholder: '...'
+        placeholder: cbdb.placeholderLater
       }
     })
   }).then(responseLoop);
