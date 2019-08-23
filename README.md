@@ -25,6 +25,7 @@ Lapin用Chatbot開発
 4. エキスポートした.jsデーターベースは元のxlsxファイルと同じフォルダーに入ってインる
 5. .jsデーターベースをWeb\chatbot\dataに入れる
 6. チャットボットを埋め込みたいウェブページのHTMLファイルにこのHTMLを<body>の最後に足す
+
 ```html
     <link rel="stylesheet" href="./chatbot/lapin-bot-widget.css" media="all">
     <script src="./lapin-cb-ops.js"></script>
